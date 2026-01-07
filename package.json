@@ -1,0 +1,18 @@
+{
+  "name": "com.vahtyah.core",
+  "displayName": "VahTyah Core",
+  "version": "1.0.0",
+  "unity": "2021.3",
+  "description": "Inspector and Layer system modules",
+  "author": {
+    "name": "Tuan Van",
+    "url": "https://github.com/vahtyah"
+  },
+  "samples": [
+    {
+      "displayName": "Editor Styles Example",
+      "description": "Example EditorStyles asset that you can customize",
+      "path":  "Samples/EditorStyle"
+    }
+  ]
+}
