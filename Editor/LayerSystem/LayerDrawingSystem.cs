@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-namespace VahTyah
+namespace VahTyah.Core
 {
     public static class LayerDrawingSystem
     {

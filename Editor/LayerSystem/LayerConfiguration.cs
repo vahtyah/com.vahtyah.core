@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace VahTyah
+namespace VahTyah.Core
 {
     [Serializable]
     public class LayerConfiguration

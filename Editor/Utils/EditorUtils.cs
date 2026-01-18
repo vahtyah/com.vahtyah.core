@@ -7,7 +7,7 @@ using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace VahTyah
+namespace VahTyah.Core
 {
     public static partial class EditorUtils
     {
