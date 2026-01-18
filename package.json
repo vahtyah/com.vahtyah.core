@@ -1,0 +1,16 @@
+{
+  "name": "com.vahtyah.core",
+  "displayName": "VahTyah Core",
+  "version": "1.0.0",
+  "unity": "2021.3",
+  "description": "Core utilities and layer drawing system for VahTyah packages.",
+  "author": {
+    "name": "Tuan Van",
+    "url": "https://github.com/vahtyah"
+  },
+  "keywords": [
+    "core",
+    "utilities",
+    "layer-system"
+  ]
+}
