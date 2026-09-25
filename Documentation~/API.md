@@ -120,6 +120,17 @@ enum GradientDirection : int
 }
 ```
 
+#### interface `IEditorPanel`
+
+A tabbed panel hosted by PanelNavigator. Implement to add a named tab to the editor content area.  
+
+```csharp
+public abstract void Draw(Rect rect);
+public abstract void Initialize();
+public abstract void OnDisable();
+public abstract void OnEnable();
+```
+
 #### class `Layer`
 
 One drawable layer of a LayerConfiguration — a solid/rounded/border/gradient fill with per-side Padding and per-corner border width/radius. Build with the Create* factories.  
@@ -214,4 +225,36 @@ public float left;
 public float right;
 public float top;
 ```
+
+#### class `PanelNavigator`
+
+Draws a tab bar for a set of named IEditorPanels and renders the active one. The tab-bar/content styling comes from an injected PanelNavigatorStyle; when none is given it falls back to PanelNavigatorTheme — the per-user theme stored in UserSettings/.  
+
+```csharp
+public PanelNavigator(Dictionary<string, IEditorPanel> panels, PanelNavigatorStyle style = null);
+public void Cleanup();
+public void Draw(Rect rect);
+public void OnEnable();
+```
+
+- `OnEnable` — Forward the enable signal to every hosted panel.
+- `Cleanup` — Forward the disable signal to every hosted panel (call on window disable).
+- `Draw` — Draw the active panel content and the tab bar within the given rect.
+
+#### class `PanelNavigatorStyle`
+
+Visual style for a PanelNavigator: the tab-bar height, the active/inactive tab layer stacks, and the content-area background. Plain serializable data (no ScriptableObject), so it can be embedded, injected, or wrapped by PanelNavigatorTheme.  
+
+```csharp
+public PanelNavigatorStyle();
+public LayerConfiguration activeTab;
+public LayerConfiguration contentBackground;
+public LayerConfiguration inactiveTab;
+public float menuBarHeight;
+public float ContentBorderWidth { get; }
+public static PanelNavigatorStyle CreateDefault(bool isDark);
+```
+
+- `ContentBorderWidth` — Border width used for the active-tab overlap trick (the active tab grows down to sit on top of the content border). Reads the content background's border layer; safe when it has fewer layers.
+- `CreateDefault` — Build the built-in style for the given skin. Values mirror the original Level Editor defaults.
 
