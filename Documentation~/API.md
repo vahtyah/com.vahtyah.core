@@ -1,6 +1,6 @@
 # com.vahtyah.core — API Reference
 
-> Version 1.0.0. Auto-generated from the compiled public API by `VahTyah → Generate API Docs`. Do not edit by hand — edit the source or `Documentation~/Examples.md` instead.
+> Version 1.0.0. Auto-generated from the compiled public API by `Tools → Export DLLs (Obfuscated)`. Do not edit by hand — edit the source or `Documentation~/Examples.md` instead.
 
 This package ships as obfuscated DLLs. This file documents the full public surface so it can be used without decompiling.
 
